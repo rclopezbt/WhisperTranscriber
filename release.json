@@ -2,19 +2,19 @@
     "schemaVersion":  1,
     "channel":  "stable",
     "version":  "0.1.2",
-    "publishedAt":  "2026-05-23T18:37:33Z",
+    "publishedAt":  "2026-05-23T18:39:50Z",
     "minimumSupportedVersion":  "0.1.0",
     "releaseUrl":  "https://github.com/rclopezbt/WhisperTranscriber/releases/latest",
     "asset":  {
                   "name":  "WhisperTranscriber-0.1.2-win-x64.zip",
                   "url":  "https://github.com/rclopezbt/WhisperTranscriber/releases/download/v0.1.2/WhisperTranscriber-0.1.2-win-x64.zip",
-                  "sha256":  "e60c47e0498888f1c3e74846c7a04b57da29398220405d02eaa2089e2d275c1f",
-                  "size":  1916272
+                  "sha256":  "90edc48298d0ec7df79ade5aed5309d365f6da266c7b1970808e765b21b26631",
+                  "size":  1916476
               },
     "setup":  {
                   "name":  "WhisperTranscriber-Setup-0.1.2.exe",
                   "url":  "https://github.com/rclopezbt/WhisperTranscriber/releases/download/v0.1.2/WhisperTranscriber-Setup-0.1.2.exe",
-                  "sha256":  "51f4442789657c8894c5765457a9e10157b2a546b20fde443c94db32c8315cb5",
+                  "sha256":  "cc2ba6c8a9a38cac4cc178866a06b15c9e74a4b8a0ba1c3a80f762f96f264a5d",
                   "size":  186368
               },
     "runtime":  {
