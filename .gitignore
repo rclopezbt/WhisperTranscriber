@@ -1,0 +1,27 @@
+# Release assets are uploaded to GitHub Releases, not committed
+*.exe
+*.msi
+*.zip
+*.7z
+*.nupkg
+*.blockmap
+
+# Local install/runtime folders
+/app/
+/runtime/
+/models/
+/downloads/
+/logs/
+
+# Generated local config/cache
+config.json
+*.config.json
+*.tmp
+*.TMP
+*.log
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
