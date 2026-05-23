@@ -25,6 +25,10 @@ A preferencia da pasta de modelos fica salva em `%APPDATA%\WhisperTranscriber\co
 
 Dependencias de runtime, como `ffmpeg` e binarios do `whisper.cpp`, podem ser instaladas pelo pacote, pelo instalador, ou baixadas sob confirmacao do usuario quando necessario. Consulte as notas da release para saber o que esta incluido em cada versao.
 
+Guia de instalacao e erros comuns:
+
+[docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md)
+
 ## Atualizacoes
 
 O arquivo `manifests/stable.json` e o manifesto publicado em Releases ficam reservados para o autoupdater. A aplicacao deve comparar a versao instalada com o manifesto do canal estavel e oferecer a atualizacao quando existir uma versao nova.
