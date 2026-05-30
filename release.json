@@ -1,20 +1,20 @@
-{
+﻿{
     "schemaVersion":  1,
     "channel":  "stable",
-    "version":  "0.1.4",
-    "publishedAt":  "2026-05-26T21:29:16Z",
+    "version":  "0.1.5",
+    "publishedAt":  "2026-05-30T15:26:02Z",
     "minimumSupportedVersion":  "0.1.0",
     "releaseUrl":  "https://github.com/rclopezbt/WhisperTranscriber/releases/latest",
     "asset":  {
-                  "name":  "WhisperTranscriber-0.1.4-win-x64.zip",
-                  "url":  "https://github.com/rclopezbt/WhisperTranscriber/releases/download/v0.1.4/WhisperTranscriber-0.1.4-win-x64.zip",
-                  "sha256":  "4b06e72c51aeaf11381b1761547d0dbc255057d24d678c47177b2e8c5593dda6",
-                  "size":  1919925
+                  "name":  "WhisperTranscriber-0.1.5-win-x64.zip",
+                  "url":  "https://github.com/rclopezbt/WhisperTranscriber/releases/download/v0.1.5/WhisperTranscriber-0.1.5-win-x64.zip",
+                  "sha256":  "1d5e154a8756f065cb2b6da81bc4d77be233f0bd9049ce04645246ef075d01cb",
+                  "size":  1933231
               },
     "setup":  {
-                  "name":  "WhisperTranscriber-Setup-0.1.4.exe",
-                  "url":  "https://github.com/rclopezbt/WhisperTranscriber/releases/download/v0.1.4/WhisperTranscriber-Setup-0.1.4.exe",
-                  "sha256":  "69abf90608377c29d4dc891a708bed835e326c6eefcd825635b7546386ad1975",
+                  "name":  "WhisperTranscriber-Setup-0.1.5.exe",
+                  "url":  "https://github.com/rclopezbt/WhisperTranscriber/releases/download/v0.1.5/WhisperTranscriber-Setup-0.1.5.exe",
+                  "sha256":  "8a9d1f8a8413a0bd4df8bd9fd5b415cd824e6fe253253e56fe2798078d672af3",
                   "size":  186368
               },
     "runtime":  {
@@ -22,8 +22,13 @@
                     "requiresConsentToDownload":  true
                 },
     "notes":  [
-                  "Adiciona janela de progresso durante transcricao.",
-                  "Mostra etapa atual, percentual quando disponivel, tempo decorrido, ETA e cancelamento.",
-                  "Mantem ZIP portatil e setup bootstrapper."
+                  "Bugfixes e melhorias:",
+                  "- Melhoria na exibição da transcrição durante processamento",
+                  "- Precisão ampliada no cálculo de tempo restante",
+                  "",
+                  "Novas features:",
+                  "- Interface visual melhorada, para melhor legibilidade",
+                  "- Autoinstalador de dependências/runtime",
+                  "- Modo de transcrição da Web via URL (suporta sites como Youtube, Instagram, Twitter, Vimeo, Dailymotion, etc)."
               ]
 }

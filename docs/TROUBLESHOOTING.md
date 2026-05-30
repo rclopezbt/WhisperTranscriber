@@ -56,7 +56,94 @@ whisper-cli.exe --help
 
 Se `where whisper-cli.exe` nao encontrar nada, a pasta ainda nao esta no PATH do terminal atual.
 
-## 4. Erro VCRUNTIME140.dll ou MSVCP140.dll
+## 4. Instalar yt-dlp para URLs publicas
+
+Para transcrever videos da web, o app usa `yt-dlp` para baixar o melhor audio disponivel de URLs publicas.
+
+Baixe em:
+
+https://github.com/yt-dlp/yt-dlp/releases
+
+No Windows, procure o asset:
+
+```text
+yt-dlp.exe
+```
+
+Teste no `cmd`:
+
+```bat
+yt-dlp.exe --version
+where yt-dlp.exe
+```
+
+Se nao estiver no PATH, use **Runtime > Escolher** e selecione a pasta que contem `yt-dlp.exe`.
+
+Observacoes:
+
+- O suporte depende do yt-dlp e pode variar por site.
+- URLs com login obrigatorio, cookies, OAuth, tokens, DRM ou restricoes de acesso nao sao suportadas nesta fase.
+- Lives/streams ao vivo ainda nao sao suportados; use videos ja publicados/VOD.
+
+## 5. Instalar Deno para melhorar YouTube
+
+O YouTube pode exigir que o yt-dlp resolva desafios JavaScript. Para isso, instale o Deno:
+
+https://github.com/denoland/deno/releases
+
+No Windows, procure o asset:
+
+```text
+deno-x86_64-pc-windows-msvc.zip
+```
+
+Extraia o ZIP e teste:
+
+```bat
+deno.exe --version
+```
+
+Se nao estiver no PATH, use **Runtime > Escolher** e selecione a pasta que contem `deno.exe`.
+
+Mesmo com Deno, alguns videos podem falhar se o YouTube exigir login/cookies, aplicar bloqueio anti-bot ou restringir o video.
+
+## 6. Usar sessao do navegador
+
+Alguns sites, especialmente YouTube, podem pedir login/cookies ou bloquear downloads anonimos. Nesses casos, o app pode pedir autorizacao para o yt-dlp ler a sessao do navegador selecionado apenas durante aquela execucao.
+
+O WhisperTranscriber nao salva cookies, tokens ou senhas. Use essa opcao apenas com conteudo que voce tem permissao para acessar e respeitando os termos da plataforma.
+
+Navegadores inicialmente previstos:
+
+```text
+chrome
+edge
+firefox
+```
+
+No Windows, Firefox costuma ser mais confiavel para essa integracao. Chrome e Edge podem falhar com DPAPI mesmo fechados, dependendo da versao/configuracao do navegador.
+
+Se aparecer:
+
+```text
+Could not copy Chrome cookie database
+```
+
+feche completamente o Chrome/Edge antes de tentar novamente. No Windows, navegadores Chromium podem bloquear o banco de cookies enquanto estao abertos, impedindo o yt-dlp de copiar a sessao.
+
+Se aparecer:
+
+```text
+Failed to decrypt with DPAPI
+```
+
+tente uma destas alternativas:
+
+- usar Firefox e selecionar `firefox` no app;
+- exportar cookies para um arquivo Netscape `cookies.txt` usando uma ferramenta/extensao de sua confianca e selecionar `cookies.txt` no app;
+- usar outro perfil/navegador onde voce esteja logado.
+
+## 7. Erro VCRUNTIME140.dll ou MSVCP140.dll
 
 Se o Windows disser que `VCRUNTIME140.dll` ou `MSVCP140.dll` nao foi encontrado, instale o Microsoft Visual C++ Redistributable x64:
 
@@ -64,7 +151,7 @@ https://aka.ms/vs/17/release/vc_redist.x64.exe
 
 Depois feche e reabra o terminal.
 
-## 5. Erro -1073741795 / 0xc000001d
+## 8. Erro -1073741795 / 0xc000001d
 
 Se o `whisper-cli.exe` termina com:
 
@@ -84,7 +171,7 @@ Solucoes possiveis:
 - habilitar recursos de CPU/virtualizacao no hypervisor;
 - compilar `whisper.cpp` para a CPU/VM alvo.
 
-## 6. Teste manual completo
+## 9. Teste manual completo
 
 Converta um video/audio para WAV temporario:
 
@@ -102,7 +189,23 @@ dir "%TEMP%\whisper_test_output*"
 
 Se gerar `.txt` ou `.srt`, o runtime esta funcionando.
 
-## 7. Logs do WhisperTranscriber
+## 10. Teste manual de URL publica
+
+Baixe somente o melhor audio de uma URL publica:
+
+```bat
+yt-dlp.exe --no-playlist -f "bestaudio/best" -o "%TEMP%\web_audio.%%(ext)s" "https://URL_PUBLICA"
+```
+
+Depois use o arquivo baixado no teste manual completo acima.
+
+Para testar com Deno e sessao do navegador:
+
+```bat
+yt-dlp.exe --no-playlist --js-runtimes "deno:C:\CAMINHO\deno.exe" --cookies-from-browser chrome -f "bestaudio/best" -o "%TEMP%\web_audio.%%(ext)s" "https://URL_PUBLICA"
+```
+
+## 11. Logs do WhisperTranscriber
 
 O app grava logs em:
 

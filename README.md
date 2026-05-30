@@ -1,6 +1,6 @@
 # WhisperTranscriber
 
-WhisperTranscriber transcreve audios e videos localmente usando Whisper. Ele pode gerar `.txt` e `.srt`, baixar modelos pelo proprio aplicativo e usar uma pasta externa de modelos ja existentes.
+WhisperTranscriber transcreve audios e videos localmente usando Whisper. Ele pode gerar `.txt` e `.srt`, baixar modelos pelo proprio aplicativo, usar uma pasta externa de modelos ja existentes e transcrever URLs publicas compativeis com yt-dlp.
 
 ## Download
 
@@ -23,7 +23,7 @@ A preferencia da pasta de modelos fica salva em `%APPDATA%\WhisperTranscriber\co
 
 ## Dependencias
 
-Dependencias de runtime, como `ffmpeg` e binarios do `whisper.cpp`, podem ser instaladas pelo pacote, pelo instalador, ou baixadas sob confirmacao do usuario quando necessario. Consulte as notas da release para saber o que esta incluido em cada versao.
+Dependencias de runtime, como `ffmpeg`, `yt-dlp`, `deno` e binarios do `whisper.cpp`, podem ser instaladas manualmente, detectadas no PATH ou configuradas pela tela Runtime. O app pode oferecer download guiado para algumas dependencias, sempre com aviso de origem/licenca antes do download. Consulte as notas da release para saber o que esta incluido em cada versao.
 
 Guia de instalacao e erros comuns:
 
